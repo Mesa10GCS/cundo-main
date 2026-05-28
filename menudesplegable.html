@@ -1,0 +1,26 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang="es"> <!-- Inicio del documento, idioma español -->
+<head> <!-- Sección de metadatos -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres para soportar tildes y ñ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página responsive -->
+    <title>Desplegable</title> <!-- Título en la pestaña del navegador -->
+    <link rel="stylesheet" href="desplegable.css"> <!-- Vincula el archivo CSS externo -->
+</head>
+<body> <!-- Inicio del contenido visible -->
+
+    <!-- El checkbox es el interruptor invisible, su id debe coincidir con el for del label -->
+    <input type="checkbox" class="toggle-checkbox" id="info-toggle">
+
+    <!-- El label actúa como botón, al clickearlo activa o desactiva el checkbox -->
+    <label for="info-toggle" class="bloque-desplegable"> <!-- for debe coincidir con el id del checkbox -->
+        <span>Más información</span> <!-- Texto visible del bloque -->
+        <span class="flecha">▼</span> <!-- Flecha que rotará con CSS al abrirse -->
+    </label>
+
+    <!-- Este bloque aparece debajo con animación cuando el checkbox está activado -->
+    <div class="bloque-info">
+        <p>Acá va la información que querés mostrar.</p> <!-- Contenido del bloque desplegable -->
+    </div>
+
+</body> <!-- Cierre del contenido visible -->
+</html> <!-- Cierre del documento HTML -->

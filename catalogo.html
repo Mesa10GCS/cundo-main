@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Raleway&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="vieport" content="device-width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body> <!-- Inicio del contenido visible -->
+   <a href="prueba.html">
+    <div class="boton-comprar">
+    <p>Comprar</p>
+</div>
+</a>
+    <!-- El checkbox es el interruptor invisible, su id debe coincidir con el for del label -->
+    <input type="checkbox" id="iphone-13" class="bloqueiphone-13">
+
+    <!-- El label actúa como botón, al clickearlo activa o desactiva el checkbox -->
+    <label for="iphone-13">
+        <div class="bloque-desplegable"> <!-- for debe coincidir con el id del checkbox -->
+            <div class="iphone13">
+                <img src="./iphone 13.jpg" alt="Iphone 13" width="150" height="150"/>
+            </div>
+            <div class="info-celular">
+        <div class="celular">
+            <p>Iphone 13</p>
+        </div>
+        <div class="precio">
+            <h2>350 USD</h2>
+        </div>
+    </div>
+
+        <div class="flecha"> <!-- Texto visible del bloque -->
+    <p>▼</p><!-- Flecha que rotará con CSS al abrirse -->
+    </div>
+</div>
+    </label>
+
+    <!-- Este bloque aparece debajo con animación cuando el checkbox está activado -->
+    <div class="bloque-info-13">
+        <p>Pantalla OLED Super Retina XDR de 6.1” ||
+       Chip A15 Bionic ||
+Cámara dual 12 MP ||
+Face ID ||
+5G ||
+Batería hasta 19 horas de video ||
+Almacenamiento: 128 GB / 256 GB / 512 GB ||
+Conector Lightning</p> <!-- Contenido del bloque desplegable -->
+    </div>
+<input type="checkbox" id="iphone-14" class="bloqueiphone-13">
+
+    <!-- El label actúa como botón, al clickearlo activa o desactiva el checkbox -->
+    <label for="iphone-14">
+        <div class="bloque-desplegable"> <!-- for debe coincidir con el id del checkbox -->
+            <div class="iphone13">
+                <img src="./iphone14.jpg" alt="Iphone 13" width="150" height="150"/>
+            </div>
+            <div class="info-celular">
+        <div class="celular">
+            <p>Iphone 14</p>
+        </div>
+        <div class="precio">
+            <h2>450 USD</h2>
+        </div>
+    </div>
+
+        <div class="flecha"> <!-- Texto visible del bloque -->
+    <p>▼</p><!-- Flecha que rotará con CSS al abrirse -->
+    </div>
+</div>
+    </label>
+
+    <!-- Este bloque aparece debajo con animación cuando el checkbox está activado -->
+    <div class="bloque-info bloque-info-14">
+        <p>Pantalla OLED Super Retina XDR de 6.1” ||
+Chip A15 Bionic ||
+Cámara dual 12 MP mejorada ||
+Face ID ||
+5G ||
+Detección de accidentes ||
+Batería hasta 20 horas de video ||
+Almacenamiento: 128 GB / 256 GB / 512 GB ||
+Conector Lightning</p> <!-- Contenido del bloque desplegable -->
+    </div>
+    </div>
+</body> <!-- Cierre del contenido visible -->
+</html> <!-- Cierre del documento HTML -->
