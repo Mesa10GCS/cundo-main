@@ -39,7 +39,7 @@ body {
     display: flex; /* Pone el texto y la flecha en fila */
     justify-content: space-between; /* Separa el texto a la izquierda y la flecha a la derecha */
     align-items: center; /* Centra verticalmente el texto y la flecha */
-    width: 600px; /* Ancho del bloque */
+    width: 700px; /* Ancho del bloque */
     border-radius: 20px;
 }
 
@@ -50,14 +50,15 @@ body {
 }
 
 /* El bloque de información que aparece abajo, empieza oculto */
-.bloque-info {
+.bloque-info-13 {
     background-color: #444; /* Color de fondo un poco más claro que el bloque principal */
     color: white; /* Texto en blanco */
-    width: 300px; /* Mismo ancho que el bloque principal */
+    width: 650px; /* Mismo ancho que el bloque principal */
     max-height: 0; /* Altura 0 para que esté oculto */
     overflow: hidden; /* Esconde el contenido que sobresale */
     transition: max-height 0.4s ease; /* Animación suave al aparecer */
     margin-bottom: 20px;
+    border-radius: 0 0 20px 20px;
 }
 
 /* Contenido dentro del bloque de info, con padding para que no quede pegado al borde */
@@ -70,9 +71,63 @@ body {
 
 /* Cuando el checkbox está marcado, muestra el bloque de info dándole altura */
 #iphone-13:checked ~ .bloque-info-13 {
-    max-height: 200px;
+    max-height: 500px;
 }
 .celular p {
+    font-family: 'Orbitron', sans-serif; /* fuente tecnológica para el título */
+    font-size: 20px; /* tamaño del título */
+    color: white; /* color del texto */
+    margin: 0; /* saca el margen por defecto del p */
+    text-align: center; /* centra el texto */
+    
+}
+.precio h2 {
+    font-family: 'Raleway', sans-serif; /* fuente más simple para el precio */
+    font-size: 16px; /* tamaño del precio */
+    color: white; /* color del texto */
+    margin: 0; /* saca el margen por defecto del h2 */
+    text-align: left; /* pegado a la izquierda */
+}
+.boton-comprar {
+    position: fixed;                /* queda fijo en la pantalla aunque hagas scroll */
+    top: 10px;                      /* distancia desde arriba */
+    left: 10px;                     /* distancia desde la izquierda */
+    background-color: #333;         /* color de fondo del bloque */
+    padding: 10px 20px;             /* espacio interior arriba/abajo y a los lados */
+    border-radius: 10px;            /* bordes redondeados */
+}
+
+.boton-comprar p {
+    font-family: 'Orbitron', sans-serif; /* fuente tecnológica que ya tenés importada */
+    font-size: 18px;                /* tamaño del texto */
+    color: white;                   /* color del texto */
+    margin: 0;                      /* saca el margen por defecto del p */
+}
+#iphone-14:checked ~ .bloque-info-14 {
+    max-height: 500px;
+}
+.bloque-info-14 {
+    background-color: #444; /* Color de fondo un poco más claro que el bloque principal */
+    color: white; /* Texto en blanco */
+    width: 650px; /* Mismo ancho que el bloque principal */
+    max-height: 0; /* Altura 0 para que esté oculto */
+    overflow: hidden; /* Esconde el contenido que sobresale */
+    transition: max-height 0.4s ease; /* Animación suave al aparecer */
+    margin-bottom: 20px;
+    border-radius: 0 0 20px 20px;
+}
+.ver-mas {
+    background-color: #555;
+    padding: 6px 14px;
+    border-radius: 8px;
+}
+
+.ver-mas p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: white;
+    margin: 0;
+}elular p {
     font-family: 'Orbitron', sans-serif; /* fuente tecnológica para el título */
     font-size: 20px; /* tamaño del título */
     color: white; /* color del texto */
