@@ -1,89 +1,130 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Raleway&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="vieport" content="device-width=device-width, initial-scale=1.0">
-    <title>Catálogo</title>
-    <link rel="stylesheet" href="catalogo.css">
-</head>
-<body> <!-- Inicio del contenido visible -->
-   <a href="prueba.html">
-    <div class="boton-comprar">
-    <p>Comprar</p>
-</div>
-</a>
-    <!-- El checkbox es el interruptor invisible, su id debe coincidir con el for del label -->
-    <input type="checkbox" id="iphone-13" class="bloqueiphone-13">
+body {
+    background-image: url('fondo.jpg');
+    background-size: cover;      /* Estira o encoge la imagen para que cubra toda la pantalla sin deformarse */
+    background-position: center;  /* Centra la imagen vertical y horizontalmente para que no se corte un solo lado */
+    background-repeat: no-repeat; /* Evita que la imagen se duplique como mosaico si la pantalla es muy grande */
+    margin: 0;                          /* elimina el margen por defecto del navegador */
+    min-height: 100vh;                  /* ocupa al menos toda la altura de la pantalla */
+    display: flex;                      /* activa flexbox para alinear los hijos */
+    flex-direction: column;             /* los hijos se apilan verticalmente */
+    align-items: center;                /* centra todo horizontalmente */
+    padding: 40px 20px;                 /* espacio interno arriba/abajo y a los lados */
+    box-sizing: border-box;             /* el padding no agrega tamaño extra al body */
+}
+.iphone13{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
 
-    <!-- El label actúa como botón, al clickearlo activa o desactiva el checkbox -->
-    <label for="iphone-13">
-        <div class="bloque-desplegable"> <!-- for debe coincidir con el id del checkbox -->
-            <div class="iphone13">
-                <img src="./iphone 13.jpg" alt="Iphone 13" width="150" height="150"/>
-            </div>
-            <div class="info-celular">
-        <div class="celular">
-            <p>Iphone 13</p>
-        </div>
-        <div class="precio">
-            <h2>350 USD</h2>
-        </div>
-    </div>
+}
+.iphone13 img {
+    display: block;      /* la imagen se comporta como bloque */
+    margin: 0 auto;      /* el auto reparte espacio igual a izquierda y derecha */
+    box-shadow: 0 0 40px rgba(223, 215, 215, 0.399);
+     border-radius: 30px;
+    display: block;       /* evita que la imagen tenga espacio extra debajo por ser inline */         /* la imagen ocupa todo el ancho del bloque-info */
 
-        <div class="flecha"> <!-- Texto visible del bloque -->
-    <p>▼</p><!-- Flecha que rotará con CSS al abrirse -->
-    </div>
-</div>
-    </label>
+}
+.bloqueiphone-13 {
+    display: none;
+    
+}
 
-    <!-- Este bloque aparece debajo con animación cuando el checkbox está activado -->
-    <div class="bloque-info-13">
-        <p>Pantalla OLED Super Retina XDR de 6.1” ||
-       Chip A15 Bionic ||
-Cámara dual 12 MP ||
-Face ID ||
-5G ||
-Batería hasta 19 horas de video ||
-Almacenamiento: 128 GB / 256 GB / 512 GB ||
-Conector Lightning</p> <!-- Contenido del bloque desplegable -->
-    </div>
-<input type="checkbox" id="iphone-14" class="bloqueiphone-13">
+/* Bloque principal clickeable, el que tiene la flecha */
+.bloque-desplegable {
+    background-color: #333; /* Color de fondo oscuro */
+    color: white; /* Texto en blanco */
+    padding: 15px; /* Espacio interior */
+    cursor: pointer; /* El cursor cambia a manito al pasar por encima */
+    display: flex; /* Pone el texto y la flecha en fila */
+    justify-content: space-between; /* Separa el texto a la izquierda y la flecha a la derecha */
+    align-items: center; /* Centra verticalmente el texto y la flecha */
+    width: 700px; /* Ancho del bloque */
+    border-radius: 20px;
+}
 
-    <!-- El label actúa como botón, al clickearlo activa o desactiva el checkbox -->
-    <label for="iphone-14">
-        <div class="bloque-desplegable"> <!-- for debe coincidir con el id del checkbox -->
-            <div class="iphone13">
-                <img src="./iphone14.jpg" alt="Iphone 13" width="150" height="150"/>
-            </div>
-            <div class="info-celular">
-        <div class="celular">
-            <p>Iphone 14</p>
-        </div>
-        <div class="precio">
-            <h2>450 USD</h2>
-        </div>
-    </div>
+/* La flecha, usamos un caracter unicode de flecha hacia abajo */
+.flecha {
+    display: inline-block; /* Necesario para poder rotarla */
+    transition: transform 0.3s ease; /* Animación suave al girar */
+}
 
-        <div class="flecha"> <!-- Texto visible del bloque -->
-    <p>▼</p><!-- Flecha que rotará con CSS al abrirse -->
-    </div>
-</div>
-    </label>
+/* El bloque de información que aparece abajo, empieza oculto */
+.bloque-info-13 {
+    background-color: #444; /* Color de fondo un poco más claro que el bloque principal */
+    color: white; /* Texto en blanco */
+    width: 650px; /* Mismo ancho que el bloque principal */
+    max-height: 0; /* Altura 0 para que esté oculto */
+    overflow: hidden; /* Esconde el contenido que sobresale */
+    transition: max-height 0.4s ease; /* Animación suave al aparecer */
+    margin-bottom: 20px;
+    border-radius: 0 0 20px 20px;
+}
 
-    <!-- Este bloque aparece debajo con animación cuando el checkbox está activado -->
-    <div class="bloque-info bloque-info-14">
-        <p>Pantalla OLED Super Retina XDR de 6.1” ||
-Chip A15 Bionic ||
-Cámara dual 12 MP mejorada ||
-Face ID ||
-5G ||
-Detección de accidentes ||
-Batería hasta 20 horas de video ||
-Almacenamiento: 128 GB / 256 GB / 512 GB ||
-Conector Lightning</p> <!-- Contenido del bloque desplegable -->
-    </div>
-    </div>
-</body> <!-- Cierre del contenido visible -->
-</html> <!-- Cierre del documento HTML -->
+/* Contenido dentro del bloque de info, con padding para que no quede pegado al borde */
+.bloque-info p {
+    padding: 15px; /* Espacio interior del texto */
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+}
+
+/* Cuando el checkbox está marcado, rota la flecha 180 grados */
+
+/* Cuando el checkbox está marcado, muestra el bloque de info dándole altura */
+#iphone-13:checked ~ .bloque-info-13 {
+    max-height: 500px;
+}
+.celular p {
+    font-family: 'Orbitron', sans-serif; /* fuente tecnológica para el título */
+    font-size: 20px; /* tamaño del título */
+    color: white; /* color del texto */
+    margin: 0; /* saca el margen por defecto del p */
+    text-align: center; /* centra el texto */
+    
+}
+.precio h2 {
+    font-family: 'Raleway', sans-serif; /* fuente más simple para el precio */
+    font-size: 16px; /* tamaño del precio */
+    color: white; /* color del texto */
+    margin: 0; /* saca el margen por defecto del h2 */
+    text-align: left; /* pegado a la izquierda */
+}
+.boton-comprar {
+    position: fixed;                /* queda fijo en la pantalla aunque hagas scroll */
+    top: 10px;                      /* distancia desde arriba */
+    left: 10px;                     /* distancia desde la izquierda */
+    background-color: #333;         /* color de fondo del bloque */
+    padding: 10px 20px;             /* espacio interior arriba/abajo y a los lados */
+    border-radius: 10px;            /* bordes redondeados */
+}
+
+.boton-comprar p {
+    font-family: 'Orbitron', sans-serif; /* fuente tecnológica que ya tenés importada */
+    font-size: 18px;                /* tamaño del texto */
+    color: white;                   /* color del texto */
+    margin: 0;                      /* saca el margen por defecto del p */
+}
+#iphone-14:checked ~ .bloque-info-14 {
+    max-height: 500px;
+}
+.bloque-info-14 {
+    background-color: #444; /* Color de fondo un poco más claro que el bloque principal */
+    color: white; /* Texto en blanco */
+    width: 650px; /* Mismo ancho que el bloque principal */
+    max-height: 0; /* Altura 0 para que esté oculto */
+    overflow: hidden; /* Esconde el contenido que sobresale */
+    transition: max-height 0.4s ease; /* Animación suave al aparecer */
+    margin-bottom: 20px;
+    border-radius: 0 0 20px 20px;
+}
+.ver-mas {
+    background-color: #555;
+    padding: 6px 14px;
+    border-radius: 8px;
+}
+
+.ver-mas p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: white;
+    margin: 0;
+}
